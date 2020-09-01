@@ -1,5 +1,9 @@
 version: 2
 
-main:
+playground:
+  type: static
+  path: /playground/dist
+
+storybook:
   type: static
   path: /.storybook/dist

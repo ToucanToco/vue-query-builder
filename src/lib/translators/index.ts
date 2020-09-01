@@ -8,6 +8,7 @@
 import { PipelineStepName } from '@/lib/steps';
 
 import { BaseTranslator } from './base';
+import { JavaScriptTranslator } from './js';
 import { Mongo36Translator } from './mongo';
 import { Mongo40Translator } from './mongo4';
 
@@ -57,5 +58,6 @@ export function availableTranslators() {
   return { ...TRANSLATORS };
 }
 
+registerTranslator('js', JavaScriptTranslator);
 registerTranslator('mongo36', Mongo36Translator);
 registerTranslator('mongo40', Mongo40Translator);

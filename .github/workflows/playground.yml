@@ -1,18 +1,15 @@
 # From https://docs.featurepeek.com/github-actions/
-name: Build storybook
+name: Build playground
 on: push
 jobs:
   build:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [12.x]
     steps:
     - uses: actions/checkout@v1
-    - name: Use Node.js ${{ matrix.node-version }}
+    - name: Use Node.js
       uses: actions/setup-node@v1
       with:
-        node-version: ${{ matrix.node-version }}
+        node-version: '12.x'
     - name: Cache node modules
       uses: actions/cache@v1
       with:
@@ -24,11 +21,15 @@ jobs:
           ${{ runner.OS }}-
     - name: Install dependencies
       run: yarn --frozen-lockfile
-    - name: Build Weaverbird components bundle
-      run: yarn storybook:bundle
-    - name: Build storybook
-      run: yarn storybook:build
+    - name: Build Weaverbird module
+      run: yarn build-bundle
+    - name: Copy weaverbird script into dist folder
+      run: cp --remove-destination dist/weaverbird.browser.js playground/dist/weaverbird.browser.js
+    - name: Copy weaverbird CSS into dist folder
+      run: cp --remove-destination dist/weaverbird.css playground/dist/playground.css
+    - name: Copy playground script into dist folder
+      run: cp --remove-destination playground/app.js playground/dist/app.js
     - name: Ping FeaturePeek
-      run: bash <(curl -s https://peek.run/ci) -a storybook
+      run: bash <(curl -s https://peek.run/ci) -a playground
       env:
         CI: true

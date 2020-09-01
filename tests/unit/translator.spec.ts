@@ -72,7 +72,7 @@ describe('translator registration', () => {
   it('should be possible to register backends', () => {
     registerTranslator('dummy', DummyStringTranslator);
     expect(backendsSupporting('aggregate')).toEqual(['mongo36', 'mongo40']);
-    expect(backendsSupporting('domain')).toEqual(['dummy', 'mongo36', 'mongo40']);
+    expect(backendsSupporting('domain')).toEqual(['dummy', 'js', 'mongo36', 'mongo40']);
   });
 
   it('should throw an error if backend is not available', () => {
@@ -82,6 +82,6 @@ describe('translator registration', () => {
   it('should be possible to get all available translators', () => {
     registerTranslator('dummy', DummyStringTranslator);
     const translators = availableTranslators();
-    expect(Object.keys(translators).sort()).toEqual(['dummy', 'mongo36', 'mongo40']);
+    expect(Object.keys(translators).sort()).toEqual(['dummy', 'js', 'mongo36', 'mongo40']);
   });
 });

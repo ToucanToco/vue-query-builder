@@ -156,13 +156,13 @@ export type FilterSimpleCondition =
   | FilterConditionEquality
   | FilterConditionInclusion;
 
-type FilterConditionComparison = {
+export type FilterConditionComparison = {
   column: string;
   value: number | string;
   operator: 'gt' | 'ge' | 'lt' | 'le';
 };
 
-type FilterConditionEquality = {
+export type FilterConditionEquality = {
   column: string;
   value: any;
   operator: 'eq' | 'ne' | 'isnull' | 'notnull' | 'matches' | 'notmatches';
