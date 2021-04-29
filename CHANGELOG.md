@@ -1,5 +1,10 @@
 # Changelog
 
+## [0.46.3] - 2021-04-29
+
+### Fixed
+- Popover: make sure popover display correctly
+
 ## [0.46.2] - 2021-04-21
 
 ### Fixed
@@ -733,6 +738,7 @@
 
 - Initial version, showtime!
 
+[0.46.3]: https://github.com/ToucanToco/weaverbird/compare/v0.46.2...v0.46.3
 [0.46.2]: https://github.com/ToucanToco/weaverbird/compare/v0.46.1...v0.46.2
 [0.46.1]: https://github.com/ToucanToco/weaverbird/compare/v0.46.0...v0.46.1
 [0.46.0]: https://github.com/ToucanToco/weaverbird/compare/v0.45.0...v0.46.0
