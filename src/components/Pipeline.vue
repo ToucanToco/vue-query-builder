@@ -1,6 +1,6 @@
 <template>
   <div class="query-pipeline">
-    <Draggable
+    <draggable
       class="query-pipeline__draggable"
       v-model="arrangedSteps"
       handle=".query-pipeline-step__action--handle"
@@ -23,7 +23,7 @@
         @editStep="editStep"
         @toggleDelete="toggleStepToDelete({ index })"
       />
-    </Draggable>
+    </draggable>
     <div class="query-pipeline__delete-steps-container" v-if="stepsToDelete.length">
       <div class="query-pipeline__delete-steps" @click="openDeleteConfirmationModal">
         <i aria-hidden="true" class="fas fa-trash" />
@@ -48,7 +48,7 @@
 import _xor from 'lodash/xor';
 import Vue from 'vue';
 import { Component } from 'vue-property-decorator';
-import Draggable from 'vuedraggable';
+import draggable from 'vuedraggable';
 
 import { DomainStep, Pipeline, PipelineStep } from '@/lib/steps';
 import { VariableDelimiters } from '@/lib/variables';
@@ -62,7 +62,7 @@ import Step from './Step.vue';
   name: 'pipeline',
   components: {
     DeleteConfirmationModal,
-    Draggable,
+    draggable,
     Step,
   },
 })
