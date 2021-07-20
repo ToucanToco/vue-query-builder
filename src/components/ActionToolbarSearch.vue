@@ -167,6 +167,9 @@ export default class SearchActions extends Vue {
     height: 16px;
   }
 }
+.action-toolbar-search__popover .multiselect--active .multiselect__content-wrapper {
+  max-height: 280px !important;
+}
 .action-toolbar-search__popover .multiselect--active .multiselect__tags {
   box-shadow: none;
   border-color: #2665a3;

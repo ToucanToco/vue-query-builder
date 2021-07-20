@@ -1,5 +1,10 @@
 # Changelog
 
+## Unreleased
+
+### Fixed
+- Display search correctly in chrome browser
+
 ## [0.53.0] - 2021-07-15
 
 ### Added

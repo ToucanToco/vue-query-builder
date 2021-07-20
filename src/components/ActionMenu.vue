@@ -223,7 +223,6 @@ export default class ActionMenu extends Vue {
   background-color: #fff;
   box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.25);
   color: $base-color;
-  overflow: hidden;
 }
 
 .action-menu__panel {
