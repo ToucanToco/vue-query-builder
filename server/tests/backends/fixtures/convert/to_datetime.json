@@ -1,0 +1,71 @@
+{
+  "step": {
+    "name": "convert",
+    "columns": [
+      "value"
+    ],
+    "data_type": "date"
+  },
+  "input": {
+    "schema": {
+      "fields": [
+        {
+          "name": "value",
+          "type": "string"
+        }
+      ],
+      "pandas_version": "0.20.0"
+    },
+    "data": [
+      {
+        "value": "2020"
+      },
+      {
+        "value": "2020-11-02"
+      },
+      {
+        "value": "11/02/2020"
+      },
+      {
+        "value": "2020-11-02T15:30"
+      },
+      {
+        "value": 1604331000000000000
+      },
+      {
+        "value": "meh"
+      }
+    ]
+  },
+  "expected": {
+    "schema": {
+      "fields": [
+        {
+          "name": "value",
+          "type": "datetime"
+        }
+      ],
+      "pandas_version": "0.20.0"
+    },
+    "data": [
+      {
+        "value": "2020-01-01T00:00:00.000Z"
+      },
+      {
+        "value": "2020-11-02T00:00:00.000Z"
+      },
+      {
+        "value": "2020-11-02T00:00:00.000Z"
+      },
+      {
+        "value": "2020-11-02T15:30:00.000Z"
+      },
+      {
+        "value": "2020-11-02T15:30:00.000Z"
+      },
+      {
+        "value": null
+      }
+    ]
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "step": {
+    "name": "convert",
+    "columns": [
+      "value"
+    ],
+    "data_type": "boolean"
+  },
+  "input": {
+    "schema": {
+      "fields": [
+        {
+          "name": "value",
+          "type": "string"
+        }
+      ],
+      "pandas_version": "0.20.0"
+    },
+    "data": [
+      {
+        "value": "plop"
+      },
+      {
+        "value": 0
+      },
+      {
+        "value": 0.0
+      },
+      {
+        "value": 1
+      },
+      {
+        "value": ""
+      },
+      {
+      }
+    ]
+  },
+  "expected": {
+    "schema": {
+      "fields": [
+        {
+          "name": "value",
+          "type": "boolean"
+        }
+      ],
+      "pandas_version": "0.20.0"
+    },
+    "data": [
+      {
+        "value": true
+      },
+      {
+        "value": false
+      },
+      {
+        "value": false
+      },
+      {
+        "value": true
+      },
+      {
+        "value": false
+      },
+      {
+        "value": true
+      }
+    ]
+  }
+}

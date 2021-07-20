@@ -1,0 +1,101 @@
+{
+  "step": {
+    "name": "dateextract",
+    "column": "date",
+    "dateInfo": [],
+    "newColumns": [],
+    "operation": "day"
+  },
+  "input": {
+    "schema": {
+      "fields": [
+        {
+          "name": "date",
+          "type": "datetime",
+          "tz": "UTC"
+        },
+        {
+          "name": "date_day",
+          "type": "number"
+        }
+      ],
+      "pandas_version": "0.20.0"
+    },
+    "data": [
+      {
+        "date": "2021-03-29T00:00:00.000Z",
+        "date_day": 29.0
+      },
+      {
+        "date": "2020-12-13T00:00:00.000Z",
+        "date_day": 13.0
+      },
+      {
+        "date": "2020-07-29T00:00:00.000Z",
+        "date_day": 29.0
+      },
+      {
+        "date": "2019-04-09T01:02:03.004Z",
+        "date_day": 9.0
+      },
+      {
+        "date": "2017-01-02T00:00:00.000Z",
+        "date_day": 2.0
+      },
+      {
+        "date": "2016-01-01T00:00:00.000Z",
+        "date_day": 1.0
+      },
+      {
+        "date": null,
+        "date_day": null
+      }
+    ]
+  },
+  "expected": {
+    "schema": {
+      "fields": [
+        {
+          "name": "date",
+          "type": "datetime",
+          "tz": "UTC"
+        },
+        {
+          "name": "date_day",
+          "type": "number"
+        }
+      ],
+      "pandas_version": "0.20.0"
+    },
+    "data": [
+      {
+        "date": "2021-03-29T00:00:00.000Z",
+        "date_day": 29.0
+      },
+      {
+        "date": "2020-12-13T00:00:00.000Z",
+        "date_day": 13.0
+      },
+      {
+        "date": "2020-07-29T00:00:00.000Z",
+        "date_day": 29.0
+      },
+      {
+        "date": "2019-04-09T01:02:03.004Z",
+        "date_day": 9.0
+      },
+      {
+        "date": "2017-01-02T00:00:00.000Z",
+        "date_day": 2.0
+      },
+      {
+        "date": "2016-01-01T00:00:00.000Z",
+        "date_day": 1.0
+      },
+      {
+        "date": null,
+        "date_day": null
+      }
+    ]
+  }
+}

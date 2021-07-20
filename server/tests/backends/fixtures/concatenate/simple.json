@@ -1,0 +1,80 @@
+{
+  "step": {
+    "name": "concatenate",
+    "columns": [
+      "NAME",
+      "AGE",
+      "SCORE"
+    ],
+    "separator": " - ",
+    "new_column_name": "newcol"
+  },
+  "input": {
+    "schema": {
+      "fields": [
+        {
+          "name": "NAME",
+          "type": "string"
+        },
+        {
+          "name": "AGE",
+          "type": "integer"
+        },
+        {
+          "name": "SCORE",
+          "type": "integer"
+        }
+      ],
+      "pandas_version": "0.20.0"
+    },
+    "data": [
+      {
+        "NAME": "foo",
+        "AGE": 42,
+        "SCORE": 100
+      },
+      {
+        "NAME": "bar",
+        "AGE": 43,
+        "SCORE": 200
+      }
+    ]
+  },
+  "expected": {
+    "schema": {
+      "fields": [
+        {
+          "name": "NAME",
+          "type": "string"
+        },
+        {
+          "name": "AGE",
+          "type": "integer"
+        },
+        {
+          "name": "SCORE",
+          "type": "integer"
+        },
+        {
+          "name": "newcol",
+          "type": "string"
+        }
+      ],
+      "pandas_version": "0.20.0"
+    },
+    "data": [
+      {
+        "NAME": "foo",
+        "AGE": 42,
+        "SCORE": 100,
+        "newcol": "foo - 42 - 100"
+      },
+      {
+        "NAME": "bar",
+        "AGE": 43,
+        "SCORE": 200,
+        "newcol": "bar - 43 - 200"
+      }
+    ]
+  }
+}

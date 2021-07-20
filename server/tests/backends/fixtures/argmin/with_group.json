@@ -1,0 +1,91 @@
+{
+  "step": {
+    "name": "argmin",
+    "column": "value",
+    "groups": [
+      "group"
+    ]
+  },
+  "input": {
+    "schema": {
+      "fields": [
+        {
+          "name": "label",
+          "type": "string"
+        },
+        {
+          "name": "group",
+          "type": "string"
+        },
+        {
+          "name": "value",
+          "type": "integer"
+        }
+      ],
+      "pandas_version": "0.20.0"
+    },
+    "data": [
+      {
+        "label": "label1",
+        "group": "group 1",
+        "value": 13
+      },
+      {
+        "label": "label2",
+        "group": "group 1",
+        "value": 7
+      },
+      {
+        "label": "label3",
+        "group": "group 1",
+        "value": 20
+      },
+      {
+        "label": "label4",
+        "group": "group 2",
+        "value": 1
+      },
+      {
+        "label": "label5",
+        "group": "group 2",
+        "value": 10
+      },
+      {
+        "label": "label6",
+        "group": "group 2",
+        "value": 5
+      }
+    ]
+  },
+  "expected": {
+    "schema": {
+      "fields": [
+        {
+          "name": "label",
+          "type": "string"
+        },
+        {
+          "name": "group",
+          "type": "string"
+        },
+        {
+          "name": "value",
+          "type": "integer"
+        }
+      ],
+      "pandas_version": "0.20.0"
+    },
+    "data": [
+      {
+        "label": "label2",
+        "group": "group 1",
+        "value": 7
+      },
+      {
+        "label": "label4",
+        "group": "group 2",
+        "value": 1
+      }
+    ]
+  }
+}

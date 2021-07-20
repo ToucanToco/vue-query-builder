@@ -1,0 +1,110 @@
+{
+  "step": {
+    "name": "append",
+    "pipelines": [
+      "miam"
+    ]
+  },
+  "input": {
+    "schema": {
+      "fields": [
+        {
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "name": "age",
+          "type": "integer"
+        },
+        {
+          "name": "score",
+          "type": "integer"
+        }
+      ],
+      "pandas_version": "0.20.0"
+    },
+    "data": [
+      {
+        "name": "foo",
+        "age": 42,
+        "score": 100
+      },
+      {
+        "name": "bar",
+        "age": 43,
+        "score": 200
+      }
+    ]
+  },
+  "other_inputs": {
+    "miam": {
+      "schema": {
+        "fields": [
+          {
+            "name": "name",
+            "type": "string"
+          },
+          {
+            "name": "score",
+            "type": "integer"
+          },
+          {
+            "name": "lambda",
+            "type": "string"
+          }
+        ],
+        "pandas_version": "0.20.0"
+      },
+      "data": [
+        {
+          "name": "miam",
+          "score": 999,
+          "lambda": "p"
+        }
+      ]
+    }
+  },
+  "expected": {
+    "schema": {
+      "fields": [
+        {
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "name": "age",
+          "type": "number"
+        },
+        {
+          "name": "score",
+          "type": "integer"
+        },
+        {
+          "name": "lambda",
+          "type": "string"
+        }
+      ],
+      "pandas_version": "0.20.0"
+    },
+    "data": [
+      {
+        "name": "foo",
+        "age": 42.0,
+        "score": 100,
+        "lambda": null
+      },
+      {
+        "name": "bar",
+        "age": 43.0,
+        "score": 200,
+        "lambda": null
+      },
+      {
+        "name": "miam",
+        "age": null,
+        "score": 999,
+        "lambda": "p"
+      }
+    ]
+  }
+}

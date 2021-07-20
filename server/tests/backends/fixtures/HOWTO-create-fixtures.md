@@ -24,9 +24,11 @@ def test_case():
                 )
             ),
             'other_inputs': { # Extract other input dataframes (for combinations)
-              '<domain_name>': other_df.to_json(
-                    orient='table',
-                    index=False,
+                '<domain_name>': json.loads(
+                    other_df.to_json(
+                        orient='table',
+                        index=False,
+                    )
                 )
             },
             'expected': json.loads(

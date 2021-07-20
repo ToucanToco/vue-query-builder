@@ -1,0 +1,71 @@
+{
+  "step": {
+    "name": "convert",
+    "columns": [
+      "value"
+    ],
+    "data_type": "float"
+  },
+  "input": {
+    "schema": {
+      "fields": [
+        {
+          "name": "value",
+          "type": "string"
+        }
+      ],
+      "pandas_version": "0.20.0"
+    },
+    "data": [
+      {
+        "value": 41
+      },
+      {
+        "value": "42"
+      },
+      {
+        "value": 43.5
+      },
+      {
+        "value": "43.6"
+      },
+      {
+        "value": null
+      },
+      {
+        "value": "meh"
+      }
+    ]
+  },
+  "expected": {
+    "schema": {
+      "fields": [
+        {
+          "name": "value",
+          "type": "number"
+        }
+      ],
+      "pandas_version": "0.20.0"
+    },
+    "data": [
+      {
+        "value": 41.0
+      },
+      {
+        "value": 42.0
+      },
+      {
+        "value": 43.5
+      },
+      {
+        "value": 43.6
+      },
+      {
+        "value": null
+      },
+      {
+        "value": null
+      }
+    ]
+  }
+}

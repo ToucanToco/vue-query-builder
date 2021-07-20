@@ -1,0 +1,82 @@
+{
+  "step": {
+    "name": "comparetext",
+    "newColumnName": "RESULT",
+    "strCol1": "TEXT_1",
+    "strCol2": "TEXT_2"
+  },
+  "input": {
+    "schema": {
+      "fields": [
+        {
+          "name": "TEXT_1",
+          "type": "string"
+        },
+        {
+          "name": "TEXT_2",
+          "type": "string"
+        }
+      ],
+      "pandas_version": "0.20.0"
+    },
+    "data": [
+      {
+        "TEXT_1": "Bbb",
+        "TEXT_2": "bbb"
+      },
+      {
+        "TEXT_1": "Bbb",
+        "TEXT_2": "Bbb"
+      },
+      {
+        "TEXT_1": "Bbb",
+        "TEXT_2": "Aaa"
+      },
+      {
+        "TEXT_1": "Bbb",
+        "TEXT_2": "cc"
+      }
+    ]
+  },
+  "expected": {
+    "schema": {
+      "fields": [
+        {
+          "name": "TEXT_1",
+          "type": "string"
+        },
+        {
+          "name": "TEXT_2",
+          "type": "string"
+        },
+        {
+          "name": "RESULT",
+          "type": "boolean"
+        }
+      ],
+      "pandas_version": "0.20.0"
+    },
+    "data": [
+      {
+        "TEXT_1": "Bbb",
+        "TEXT_2": "bbb",
+        "RESULT": false
+      },
+      {
+        "TEXT_1": "Bbb",
+        "TEXT_2": "Bbb",
+        "RESULT": true
+      },
+      {
+        "TEXT_1": "Bbb",
+        "TEXT_2": "Aaa",
+        "RESULT": false
+      },
+      {
+        "TEXT_1": "Bbb",
+        "TEXT_2": "cc",
+        "RESULT": false
+      }
+    ]
+  }
+}

@@ -1,0 +1,195 @@
+{
+  "step": {
+    "name": "aggregate",
+    "on": [
+      "Group"
+    ],
+    "aggregations": [
+      {
+        "newcolumns": [
+          "min_Value1",
+          "min_Value2"
+        ],
+        "aggfunction": "min",
+        "columns": [
+          "Value1",
+          "Value2"
+        ]
+      },
+      {
+        "newcolumns": [
+          "max_Value1",
+          "max_Value2"
+        ],
+        "aggfunction": "max",
+        "columns": [
+          "Value1",
+          "Value2"
+        ]
+      }
+    ],
+    "keepOriginalGranularity": true
+  },
+  "input": {
+    "schema": {
+      "fields": [
+        {
+          "name": "Label",
+          "type": "string"
+        },
+        {
+          "name": "Group",
+          "type": "string"
+        },
+        {
+          "name": "Value1",
+          "type": "integer"
+        },
+        {
+          "name": "Value2",
+          "type": "integer"
+        }
+      ],
+      "pandas_version": "0.20.0"
+    },
+    "data": [
+      {
+        "Label": "Label 1",
+        "Group": "Group 1",
+        "Value1": 13,
+        "Value2": 10
+      },
+      {
+        "Label": "Label 2",
+        "Group": "Group 1",
+        "Value1": 7,
+        "Value2": 21
+      },
+      {
+        "Label": "Label 3",
+        "Group": "Group 1",
+        "Value1": 20,
+        "Value2": 4
+      },
+      {
+        "Label": "Label 4",
+        "Group": "Group 2",
+        "Value1": 1,
+        "Value2": 17
+      },
+      {
+        "Label": "Label 5",
+        "Group": "Group 2",
+        "Value1": 10,
+        "Value2": 12
+      },
+      {
+        "Label": "Label 6",
+        "Group": "Group 2",
+        "Value1": 5,
+        "Value2": 2
+      }
+    ]
+  },
+  "expected": {
+    "schema": {
+      "fields": [
+        {
+          "name": "Label",
+          "type": "string"
+        },
+        {
+          "name": "Group",
+          "type": "string"
+        },
+        {
+          "name": "Value1",
+          "type": "integer"
+        },
+        {
+          "name": "min_Value1",
+          "type": "integer"
+        },
+        {
+          "name": "max_Value1",
+          "type": "integer"
+        },
+        {
+          "name": "Value2",
+          "type": "integer"
+        },
+        {
+          "name": "min_Value2",
+          "type": "integer"
+        },
+        {
+          "name": "max_Value2",
+          "type": "integer"
+        }
+      ],
+      "pandas_version": "0.20.0"
+    },
+    "data": [
+      {
+        "Label": "Label 1",
+        "Group": "Group 1",
+        "Value1": 13,
+        "min_Value1": 7,
+        "max_Value1": 20,
+        "Value2": 10,
+        "min_Value2": 4,
+        "max_Value2": 21
+      },
+      {
+        "Label": "Label 2",
+        "Group": "Group 1",
+        "Value1": 7,
+        "min_Value1": 7,
+        "max_Value1": 20,
+        "Value2": 21,
+        "min_Value2": 4,
+        "max_Value2": 21
+      },
+      {
+        "Label": "Label 3",
+        "Group": "Group 1",
+        "Value1": 20,
+        "min_Value1": 7,
+        "max_Value1": 20,
+        "Value2": 4,
+        "min_Value2": 4,
+        "max_Value2": 21
+      },
+      {
+        "Label": "Label 4",
+        "Group": "Group 2",
+        "Value1": 1,
+        "min_Value1": 1,
+        "max_Value1": 10,
+        "Value2": 17,
+        "min_Value2": 2,
+        "max_Value2": 17
+      },
+      {
+        "Label": "Label 5",
+        "Group": "Group 2",
+        "Value1": 10,
+        "min_Value1": 1,
+        "max_Value1": 10,
+        "Value2": 12,
+        "min_Value2": 2,
+        "max_Value2": 17
+      },
+      {
+        "Label": "Label 6",
+        "Group": "Group 2",
+        "Value1": 5,
+        "min_Value1": 1,
+        "max_Value1": 10,
+        "Value2": 2,
+        "min_Value2": 2,
+        "max_Value2": 17
+      }
+    ]
+  }
+}

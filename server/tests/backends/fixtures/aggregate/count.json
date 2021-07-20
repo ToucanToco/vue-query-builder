@@ -1,0 +1,106 @@
+{
+  "step": {
+    "name": "aggregate",
+    "on": [
+      "Group"
+    ],
+    "aggregations": [
+      {
+        "newcolumns": [
+          "count"
+        ],
+        "aggfunction": "count",
+        "columns": [
+          "Label"
+        ]
+      }
+    ],
+    "keepOriginalGranularity": false
+  },
+  "input": {
+    "schema": {
+      "fields": [
+        {
+          "name": "Label",
+          "type": "string"
+        },
+        {
+          "name": "Group",
+          "type": "string"
+        },
+        {
+          "name": "Value1",
+          "type": "integer"
+        },
+        {
+          "name": "Value2",
+          "type": "integer"
+        }
+      ],
+      "pandas_version": "0.20.0"
+    },
+    "data": [
+      {
+        "Label": "Label 1",
+        "Group": "Group 1",
+        "Value1": 13,
+        "Value2": 10
+      },
+      {
+        "Label": "Label 2",
+        "Group": "Group 1",
+        "Value1": 7,
+        "Value2": 21
+      },
+      {
+        "Label": "Label 3",
+        "Group": "Group 1",
+        "Value1": 20,
+        "Value2": 4
+      },
+      {
+        "Label": "Label 4",
+        "Group": "Group 2",
+        "Value1": 1,
+        "Value2": 17
+      },
+      {
+        "Label": "Label 5",
+        "Group": "Group 2",
+        "Value1": 10,
+        "Value2": 12
+      },
+      {
+        "Label": "Label 6",
+        "Group": "Group 2",
+        "Value1": 5,
+        "Value2": 2
+      }
+    ]
+  },
+  "expected": {
+    "schema": {
+      "fields": [
+        {
+          "name": "Group",
+          "type": "string"
+        },
+        {
+          "name": "count",
+          "type": "integer"
+        }
+      ],
+      "pandas_version": "0.20.0"
+    },
+    "data": [
+      {
+        "Group": "Group 1",
+        "count": 3
+      },
+      {
+        "Group": "Group 2",
+        "count": 3
+      }
+    ]
+  }
+}

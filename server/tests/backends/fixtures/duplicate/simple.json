@@ -1,0 +1,51 @@
+{
+  "step": {
+    "name": "duplicate",
+    "column": "x",
+    "new_column_name": "y"
+  },
+  "input": {
+    "schema": {
+      "fields": [
+        {
+          "name": "x",
+          "type": "integer"
+        }
+      ],
+      "pandas_version": "0.20.0"
+    },
+    "data": [
+      {
+        "x": 100
+      },
+      {
+        "x": 200
+      }
+    ]
+  },
+  "expected": {
+    "schema": {
+      "fields": [
+        {
+          "name": "x",
+          "type": "integer"
+        },
+        {
+          "name": "y",
+          "type": "integer"
+        }
+      ],
+      "pandas_version": "0.20.0"
+    },
+    "data": [
+      {
+        "x": 100,
+        "y": 100
+      },
+      {
+        "x": 200,
+        "y": 200
+      }
+    ]
+  }
+}

@@ -1,0 +1,189 @@
+{
+  "step": {
+    "name": "cumsum",
+    "valueColumn": "value",
+    "referenceColumn": "date",
+    "groupby": [
+      "country"
+    ],
+    "newColumn": "my_cumsum"
+  },
+  "input": {
+    "schema": {
+      "fields": [
+        {
+          "name": "date",
+          "type": "string"
+        },
+        {
+          "name": "country",
+          "type": "string"
+        },
+        {
+          "name": "value",
+          "type": "integer"
+        }
+      ],
+      "pandas_version": "0.20.0"
+    },
+    "data": [
+      {
+        "date": "2019-01",
+        "country": "France",
+        "value": 2
+      },
+      {
+        "date": "2019-02",
+        "country": "France",
+        "value": 5
+      },
+      {
+        "date": "2019-03",
+        "country": "France",
+        "value": 3
+      },
+      {
+        "date": "2019-04",
+        "country": "France",
+        "value": 8
+      },
+      {
+        "date": "2019-05",
+        "country": "France",
+        "value": 9
+      },
+      {
+        "date": "2019-06",
+        "country": "France",
+        "value": 6
+      },
+      {
+        "date": "2019-01",
+        "country": "USA",
+        "value": 10
+      },
+      {
+        "date": "2019-02",
+        "country": "USA",
+        "value": 6
+      },
+      {
+        "date": "2019-03",
+        "country": "USA",
+        "value": 6
+      },
+      {
+        "date": "2019-04",
+        "country": "USA",
+        "value": 4
+      },
+      {
+        "date": "2019-05",
+        "country": "USA",
+        "value": 8
+      },
+      {
+        "date": "2019-06",
+        "country": "USA",
+        "value": 7
+      }
+    ]
+  },
+  "expected": {
+    "schema": {
+      "fields": [
+        {
+          "name": "date",
+          "type": "string"
+        },
+        {
+          "name": "country",
+          "type": "string"
+        },
+        {
+          "name": "value",
+          "type": "integer"
+        },
+        {
+          "name": "my_cumsum",
+          "type": "integer"
+        }
+      ],
+      "pandas_version": "0.20.0"
+    },
+    "data": [
+      {
+        "date": "2019-01",
+        "country": "France",
+        "value": 2,
+        "my_cumsum": 2
+      },
+      {
+        "date": "2019-01",
+        "country": "USA",
+        "value": 10,
+        "my_cumsum": 10
+      },
+      {
+        "date": "2019-02",
+        "country": "France",
+        "value": 5,
+        "my_cumsum": 7
+      },
+      {
+        "date": "2019-02",
+        "country": "USA",
+        "value": 6,
+        "my_cumsum": 16
+      },
+      {
+        "date": "2019-03",
+        "country": "France",
+        "value": 3,
+        "my_cumsum": 10
+      },
+      {
+        "date": "2019-03",
+        "country": "USA",
+        "value": 6,
+        "my_cumsum": 22
+      },
+      {
+        "date": "2019-04",
+        "country": "France",
+        "value": 8,
+        "my_cumsum": 18
+      },
+      {
+        "date": "2019-04",
+        "country": "USA",
+        "value": 4,
+        "my_cumsum": 26
+      },
+      {
+        "date": "2019-05",
+        "country": "France",
+        "value": 9,
+        "my_cumsum": 27
+      },
+      {
+        "date": "2019-05",
+        "country": "USA",
+        "value": 8,
+        "my_cumsum": 34
+      },
+      {
+        "date": "2019-06",
+        "country": "France",
+        "value": 6,
+        "my_cumsum": 33
+      },
+      {
+        "date": "2019-06",
+        "country": "USA",
+        "value": 7,
+        "my_cumsum": 41
+      }
+    ]
+  }
+}

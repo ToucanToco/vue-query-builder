@@ -1,0 +1,79 @@
+{
+  "step": {
+    "name": "dateextract",
+    "column": "date",
+    "dateInfo": [],
+    "newColumns": [],
+    "operation": "day",
+    "new_column_name": "date"
+  },
+  "input": {
+    "schema": {
+      "fields": [
+        {
+          "name": "date",
+          "type": "datetime",
+          "tz": "UTC"
+        }
+      ],
+      "pandas_version": "0.20.0"
+    },
+    "data": [
+      {
+        "date": "2021-03-29T00:00:00.000Z"
+      },
+      {
+        "date": "2020-12-13T00:00:00.000Z"
+      },
+      {
+        "date": "2020-07-29T00:00:00.000Z"
+      },
+      {
+        "date": "2019-04-09T01:02:03.004Z"
+      },
+      {
+        "date": "2017-01-02T00:00:00.000Z"
+      },
+      {
+        "date": "2016-01-01T00:00:00.000Z"
+      },
+      {
+        "date": null
+      }
+    ]
+  },
+  "expected": {
+    "schema": {
+      "fields": [
+        {
+          "name": "date",
+          "type": "number"
+        }
+      ],
+      "pandas_version": "0.20.0"
+    },
+    "data": [
+      {
+        "date": 29.0
+      },
+      {
+        "date": 13.0
+      },
+      {
+        "date": 29.0
+      },
+      {
+        "date": 9.0
+      },
+      {
+        "date": 2.0
+      },
+      {
+        "date": 1.0
+      },
+      {
+        "date": null
+      }
+    ]
+  }
+}

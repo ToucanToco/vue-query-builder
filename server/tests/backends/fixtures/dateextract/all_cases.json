@@ -1,0 +1,481 @@
+{
+  "step": {
+    "name": "dateextract",
+    "column": "date",
+    "dateInfo": [
+      "year",
+      "month",
+      "day",
+      "week",
+      "quarter",
+      "dayOfWeek",
+      "dayOfYear",
+      "isoYear",
+      "isoWeek",
+      "isoDayOfWeek",
+      "firstDayOfYear",
+      "firstDayOfMonth",
+      "firstDayOfWeek",
+      "firstDayOfQuarter",
+      "firstDayOfIsoWeek",
+      "previousDay",
+      "firstDayOfPreviousYear",
+      "firstDayOfPreviousMonth",
+      "firstDayOfPreviousWeek",
+      "firstDayOfPreviousQuarter",
+      "firstDayOfPreviousIsoWeek",
+      "previousYear",
+      "previousMonth",
+      "previousWeek",
+      "previousQuarter",
+      "previousIsoWeek",
+      "hour",
+      "minutes",
+      "seconds",
+      "milliseconds"
+    ],
+    "newColumns": [
+      "date_year",
+      "date_month",
+      "date_day",
+      "date_week",
+      "date_quarter",
+      "date_dayOfWeek",
+      "date_dayOfYear",
+      "date_isoYear",
+      "date_isoWeek",
+      "date_isoDayOfWeek",
+      "date_firstDayOfYear",
+      "date_firstDayOfMonth",
+      "date_firstDayOfWeek",
+      "date_firstDayOfQuarter",
+      "date_firstDayOfIsoWeek",
+      "date_previousDay",
+      "date_firstDayOfPreviousYear",
+      "date_firstDayOfPreviousMonth",
+      "date_firstDayOfPreviousWeek",
+      "date_firstDayOfPreviousQuarter",
+      "date_firstDayOfPreviousIsoWeek",
+      "date_previousYear",
+      "date_previousMonth",
+      "date_previousWeek",
+      "date_previousQuarter",
+      "date_previousIsoWeek",
+      "date_hour",
+      "date_minutes",
+      "date_seconds",
+      "date_milliseconds"
+    ]
+  },
+  "input": {
+    "schema": {
+      "fields": [
+        {
+          "name": "date",
+          "type": "datetime",
+          "tz": "UTC"
+        }
+      ],
+      "pandas_version": "0.20.0"
+    },
+    "data": [
+      {
+        "date": "2021-03-29T00:00:00.000Z"
+      },
+      {
+        "date": "2020-12-13T00:00:00.000Z"
+      },
+      {
+        "date": "2020-07-29T00:00:00.000Z"
+      },
+      {
+        "date": "2019-04-09T01:02:03.004Z"
+      },
+      {
+        "date": "2017-01-02T00:00:00.000Z"
+      },
+      {
+        "date": "2016-01-01T00:00:00.000Z"
+      },
+      {
+        "date": null
+      }
+    ]
+  },
+  "expected": {
+    "schema": {
+      "fields": [
+        {
+          "name": "date",
+          "type": "datetime",
+          "tz": "UTC"
+        },
+        {
+          "name": "date_year",
+          "type": "number"
+        },
+        {
+          "name": "date_month",
+          "type": "number"
+        },
+        {
+          "name": "date_day",
+          "type": "number"
+        },
+        {
+          "name": "date_week",
+          "type": "number"
+        },
+        {
+          "name": "date_quarter",
+          "type": "number"
+        },
+        {
+          "name": "date_dayOfWeek",
+          "type": "number"
+        },
+        {
+          "name": "date_dayOfYear",
+          "type": "number"
+        },
+        {
+          "name": "date_isoYear",
+          "type": "number"
+        },
+        {
+          "name": "date_isoWeek",
+          "type": "number"
+        },
+        {
+          "name": "date_isoDayOfWeek",
+          "type": "number"
+        },
+        {
+          "name": "date_firstDayOfYear",
+          "type": "datetime",
+          "tz": "UTC"
+        },
+        {
+          "name": "date_firstDayOfMonth",
+          "type": "datetime",
+          "tz": "UTC"
+        },
+        {
+          "name": "date_firstDayOfWeek",
+          "type": "datetime",
+          "tz": "UTC"
+        },
+        {
+          "name": "date_firstDayOfQuarter",
+          "type": "datetime",
+          "tz": "UTC"
+        },
+        {
+          "name": "date_firstDayOfIsoWeek",
+          "type": "datetime",
+          "tz": "UTC"
+        },
+        {
+          "name": "date_previousDay",
+          "type": "datetime",
+          "tz": "UTC"
+        },
+        {
+          "name": "date_firstDayOfPreviousYear",
+          "type": "datetime",
+          "tz": "UTC"
+        },
+        {
+          "name": "date_firstDayOfPreviousMonth",
+          "type": "datetime",
+          "tz": "UTC"
+        },
+        {
+          "name": "date_firstDayOfPreviousWeek",
+          "type": "datetime",
+          "tz": "UTC"
+        },
+        {
+          "name": "date_firstDayOfPreviousQuarter",
+          "type": "datetime",
+          "tz": "UTC"
+        },
+        {
+          "name": "date_firstDayOfPreviousIsoWeek",
+          "type": "datetime",
+          "tz": "UTC"
+        },
+        {
+          "name": "date_previousYear",
+          "type": "number"
+        },
+        {
+          "name": "date_previousMonth",
+          "type": "number"
+        },
+        {
+          "name": "date_previousQuarter",
+          "type": "number"
+        },
+        {
+          "name": "date_previousWeek",
+          "type": "number"
+        },
+        {
+          "name": "date_previousIsoWeek",
+          "type": "number"
+        },
+        {
+          "name": "date_hour",
+          "type": "number"
+        },
+        {
+          "name": "date_minutes",
+          "type": "number"
+        },
+        {
+          "name": "date_seconds",
+          "type": "number"
+        },
+        {
+          "name": "date_milliseconds",
+          "type": "number"
+        }
+      ],
+      "pandas_version": "0.20.0"
+    },
+    "data": [
+      {
+        "date": "2021-03-29T00:00:00.000Z",
+        "date_year": 2021.0,
+        "date_month": 3.0,
+        "date_day": 29.0,
+        "date_week": 13.0,
+        "date_quarter": 1.0,
+        "date_dayOfWeek": 2.0,
+        "date_dayOfYear": 88.0,
+        "date_isoYear": 2021.0,
+        "date_isoWeek": 13.0,
+        "date_isoDayOfWeek": 1.0,
+        "date_firstDayOfYear": "2021-01-01T00:00:00.000Z",
+        "date_firstDayOfMonth": "2021-03-01T00:00:00.000Z",
+        "date_firstDayOfWeek": "2021-03-28T00:00:00.000Z",
+        "date_firstDayOfQuarter": "2021-01-01T00:00:00.000Z",
+        "date_firstDayOfIsoWeek": "2021-03-29T00:00:00.000Z",
+        "date_previousDay": "2021-03-28T00:00:00.000Z",
+        "date_firstDayOfPreviousYear": "2020-01-01T00:00:00.000Z",
+        "date_firstDayOfPreviousMonth": "2021-02-01T00:00:00.000Z",
+        "date_firstDayOfPreviousWeek": "2021-03-21T00:00:00.000Z",
+        "date_firstDayOfPreviousQuarter": "2020-10-01T00:00:00.000Z",
+        "date_firstDayOfPreviousIsoWeek": "2021-03-22T00:00:00.000Z",
+        "date_previousYear": 2020.0,
+        "date_previousMonth": 2.0,
+        "date_previousQuarter": 4.0,
+        "date_previousWeek": 12.0,
+        "date_previousIsoWeek": 12.0,
+        "date_hour": 0.0,
+        "date_minutes": 0.0,
+        "date_seconds": 0.0,
+        "date_milliseconds": 0.0
+      },
+      {
+        "date": "2020-12-13T00:00:00.000Z",
+        "date_year": 2020.0,
+        "date_month": 12.0,
+        "date_day": 13.0,
+        "date_week": 50.0,
+        "date_quarter": 4.0,
+        "date_dayOfWeek": 1.0,
+        "date_dayOfYear": 348.0,
+        "date_isoYear": 2020.0,
+        "date_isoWeek": 50.0,
+        "date_isoDayOfWeek": 7.0,
+        "date_firstDayOfYear": "2020-01-01T00:00:00.000Z",
+        "date_firstDayOfMonth": "2020-12-01T00:00:00.000Z",
+        "date_firstDayOfWeek": "2020-12-13T00:00:00.000Z",
+        "date_firstDayOfQuarter": "2020-10-01T00:00:00.000Z",
+        "date_firstDayOfIsoWeek": "2020-12-07T00:00:00.000Z",
+        "date_previousDay": "2020-12-12T00:00:00.000Z",
+        "date_firstDayOfPreviousYear": "2019-01-01T00:00:00.000Z",
+        "date_firstDayOfPreviousMonth": "2020-11-01T00:00:00.000Z",
+        "date_firstDayOfPreviousWeek": "2020-12-06T00:00:00.000Z",
+        "date_firstDayOfPreviousQuarter": "2020-07-01T00:00:00.000Z",
+        "date_firstDayOfPreviousIsoWeek": "2020-11-30T00:00:00.000Z",
+        "date_previousYear": 2019.0,
+        "date_previousMonth": 11.0,
+        "date_previousQuarter": 3.0,
+        "date_previousWeek": 49.0,
+        "date_previousIsoWeek": 49.0,
+        "date_hour": 0.0,
+        "date_minutes": 0.0,
+        "date_seconds": 0.0,
+        "date_milliseconds": 0.0
+      },
+      {
+        "date": "2020-07-29T00:00:00.000Z",
+        "date_year": 2020.0,
+        "date_month": 7.0,
+        "date_day": 29.0,
+        "date_week": 30.0,
+        "date_quarter": 3.0,
+        "date_dayOfWeek": 4.0,
+        "date_dayOfYear": 211.0,
+        "date_isoYear": 2020.0,
+        "date_isoWeek": 31.0,
+        "date_isoDayOfWeek": 3.0,
+        "date_firstDayOfYear": "2020-01-01T00:00:00.000Z",
+        "date_firstDayOfMonth": "2020-07-01T00:00:00.000Z",
+        "date_firstDayOfWeek": "2020-07-26T00:00:00.000Z",
+        "date_firstDayOfQuarter": "2020-07-01T00:00:00.000Z",
+        "date_firstDayOfIsoWeek": "2020-07-27T00:00:00.000Z",
+        "date_previousDay": "2020-07-28T00:00:00.000Z",
+        "date_firstDayOfPreviousYear": "2019-01-01T00:00:00.000Z",
+        "date_firstDayOfPreviousMonth": "2020-06-01T00:00:00.000Z",
+        "date_firstDayOfPreviousWeek": "2020-07-19T00:00:00.000Z",
+        "date_firstDayOfPreviousQuarter": "2020-04-01T00:00:00.000Z",
+        "date_firstDayOfPreviousIsoWeek": "2020-07-20T00:00:00.000Z",
+        "date_previousYear": 2019.0,
+        "date_previousMonth": 6.0,
+        "date_previousQuarter": 2.0,
+        "date_previousWeek": 29.0,
+        "date_previousIsoWeek": 30.0,
+        "date_hour": 0.0,
+        "date_minutes": 0.0,
+        "date_seconds": 0.0,
+        "date_milliseconds": 0.0
+      },
+      {
+        "date": "2019-04-09T01:02:03.004Z",
+        "date_year": 2019.0,
+        "date_month": 4.0,
+        "date_day": 9.0,
+        "date_week": 14.0,
+        "date_quarter": 2.0,
+        "date_dayOfWeek": 3.0,
+        "date_dayOfYear": 99.0,
+        "date_isoYear": 2019.0,
+        "date_isoWeek": 15.0,
+        "date_isoDayOfWeek": 2.0,
+        "date_firstDayOfYear": "2019-01-01T00:00:00.000Z",
+        "date_firstDayOfMonth": "2019-04-01T00:00:00.000Z",
+        "date_firstDayOfWeek": "2019-04-07T00:00:00.000Z",
+        "date_firstDayOfQuarter": "2019-04-01T00:00:00.000Z",
+        "date_firstDayOfIsoWeek": "2019-04-08T00:00:00.000Z",
+        "date_previousDay": "2019-04-08T00:00:00.000Z",
+        "date_firstDayOfPreviousYear": "2018-01-01T00:00:00.000Z",
+        "date_firstDayOfPreviousMonth": "2019-03-01T00:00:00.000Z",
+        "date_firstDayOfPreviousWeek": "2019-03-31T00:00:00.000Z",
+        "date_firstDayOfPreviousQuarter": "2019-01-01T00:00:00.000Z",
+        "date_firstDayOfPreviousIsoWeek": "2019-04-01T00:00:00.000Z",
+        "date_previousYear": 2018.0,
+        "date_previousMonth": 3.0,
+        "date_previousQuarter": 1.0,
+        "date_previousWeek": 13.0,
+        "date_previousIsoWeek": 14.0,
+        "date_hour": 1.0,
+        "date_minutes": 2.0,
+        "date_seconds": 3.0,
+        "date_milliseconds": 4.0
+      },
+      {
+        "date": "2017-01-02T00:00:00.000Z",
+        "date_year": 2017.0,
+        "date_month": 1.0,
+        "date_day": 2.0,
+        "date_week": 1.0,
+        "date_quarter": 1.0,
+        "date_dayOfWeek": 2.0,
+        "date_dayOfYear": 2.0,
+        "date_isoYear": 2017.0,
+        "date_isoWeek": 1.0,
+        "date_isoDayOfWeek": 1.0,
+        "date_firstDayOfYear": "2017-01-01T00:00:00.000Z",
+        "date_firstDayOfMonth": "2017-01-01T00:00:00.000Z",
+        "date_firstDayOfWeek": "2017-01-01T00:00:00.000Z",
+        "date_firstDayOfQuarter": "2017-01-01T00:00:00.000Z",
+        "date_firstDayOfIsoWeek": "2017-01-02T00:00:00.000Z",
+        "date_previousDay": "2017-01-01T00:00:00.000Z",
+        "date_firstDayOfPreviousYear": "2016-01-01T00:00:00.000Z",
+        "date_firstDayOfPreviousMonth": "2016-12-01T00:00:00.000Z",
+        "date_firstDayOfPreviousWeek": "2016-12-25T00:00:00.000Z",
+        "date_firstDayOfPreviousQuarter": "2016-10-01T00:00:00.000Z",
+        "date_firstDayOfPreviousIsoWeek": "2016-12-26T00:00:00.000Z",
+        "date_previousYear": 2016.0,
+        "date_previousMonth": 12.0,
+        "date_previousQuarter": 4.0,
+        "date_previousWeek": 52.0,
+        "date_previousIsoWeek": 52.0,
+        "date_hour": 0.0,
+        "date_minutes": 0.0,
+        "date_seconds": 0.0,
+        "date_milliseconds": 0.0
+      },
+      {
+        "date": "2016-01-01T00:00:00.000Z",
+        "date_year": 2016.0,
+        "date_month": 1.0,
+        "date_day": 1.0,
+        "date_week": 0.0,
+        "date_quarter": 1.0,
+        "date_dayOfWeek": 6.0,
+        "date_dayOfYear": 1.0,
+        "date_isoYear": 2015.0,
+        "date_isoWeek": 53.0,
+        "date_isoDayOfWeek": 5.0,
+        "date_firstDayOfYear": "2016-01-01T00:00:00.000Z",
+        "date_firstDayOfMonth": "2016-01-01T00:00:00.000Z",
+        "date_firstDayOfWeek": "2015-12-27T00:00:00.000Z",
+        "date_firstDayOfQuarter": "2016-01-01T00:00:00.000Z",
+        "date_firstDayOfIsoWeek": "2015-12-28T00:00:00.000Z",
+        "date_previousDay": "2015-12-31T00:00:00.000Z",
+        "date_firstDayOfPreviousYear": "2015-01-01T00:00:00.000Z",
+        "date_firstDayOfPreviousMonth": "2015-12-01T00:00:00.000Z",
+        "date_firstDayOfPreviousWeek": "2015-12-20T00:00:00.000Z",
+        "date_firstDayOfPreviousQuarter": "2015-10-01T00:00:00.000Z",
+        "date_firstDayOfPreviousIsoWeek": "2015-12-21T00:00:00.000Z",
+        "date_previousYear": 2015.0,
+        "date_previousMonth": 12.0,
+        "date_previousQuarter": 4.0,
+        "date_previousWeek": 51.0,
+        "date_previousIsoWeek": 52.0,
+        "date_hour": 0.0,
+        "date_minutes": 0.0,
+        "date_seconds": 0.0,
+        "date_milliseconds": 0.0
+      },
+      {
+        "date": null,
+        "date_year": null,
+        "date_month": null,
+        "date_day": null,
+        "date_week": null,
+        "date_quarter": null,
+        "date_dayOfWeek": null,
+        "date_dayOfYear": null,
+        "date_isoYear": null,
+        "date_isoWeek": null,
+        "date_isoDayOfWeek": null,
+        "date_firstDayOfYear": null,
+        "date_firstDayOfMonth": null,
+        "date_firstDayOfWeek": null,
+        "date_firstDayOfQuarter": null,
+        "date_firstDayOfIsoWeek": null,
+        "date_previousDay": null,
+        "date_firstDayOfPreviousYear": null,
+        "date_firstDayOfPreviousMonth": null,
+        "date_firstDayOfPreviousWeek": null,
+        "date_firstDayOfPreviousQuarter": null,
+        "date_firstDayOfPreviousIsoWeek": null,
+        "date_previousYear": null,
+        "date_previousMonth": null,
+        "date_previousQuarter": null,
+        "date_previousWeek": null,
+        "date_previousIsoWeek": null,
+        "date_hour": null,
+        "date_minutes": null,
+        "date_seconds": null,
+        "date_milliseconds": null
+      }
+    ]
+  }
+}
