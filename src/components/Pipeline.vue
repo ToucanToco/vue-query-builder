@@ -157,12 +157,13 @@ export default class PipelineComponent extends Vue {
     const isPasting: boolean = event.key == 'v' && (event.ctrlKey || event.metaKey);
     const isCopying: boolean = event.key == 'c' && (event.ctrlKey || event.metaKey);
     const isDeleting: boolean = event.key === 'Backspace';
+    const isNotFocusingAnyInput = document.activeElement === document.body;
 
     if (isCopying) {
       this.copySelectedSteps();
     } else if (isPasting) {
       this.pasteSelectedSteps();
-    } else if (isDeleting) {
+    } else if (isDeleting && isNotFocusingAnyInput) {
       this.openDeleteConfirmationModal();
     }
   }

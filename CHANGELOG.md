@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased
+
+### Fixed
+- Only enable current step delete shortcut when no other input is focused
 ## [0.53.0] - 2021-07-15
 
 ### Added
